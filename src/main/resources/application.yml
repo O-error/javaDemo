@@ -3,11 +3,15 @@
 #
 
 spring:
+  thymeleaf:
+    cache: false
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://119.91.238.162:3306/mydb?serverTimezone=GMT%2B8&characterEncoding=UTF-8
     username: root
     password: root
+
+
 
 #logging:
 #  level: info

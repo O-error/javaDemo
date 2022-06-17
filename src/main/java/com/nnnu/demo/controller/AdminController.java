@@ -22,7 +22,7 @@ public class AdminController {
         }
     }
 
-    @GetMapping("/update")
+    @PostMapping("/update")
     public boolean updateAdmin(Admin admin){
         return adminService.updateAdmin(admin);
     }

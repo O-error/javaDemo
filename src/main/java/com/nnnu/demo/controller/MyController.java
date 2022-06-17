@@ -15,7 +15,7 @@ public class MyController {
 
     @GetMapping("toLogin")
     public String toLogin(){
-        return "login";
+        return "index";
     }
 
     @GetMapping("index")
