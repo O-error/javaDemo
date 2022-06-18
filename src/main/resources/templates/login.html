@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>登录</title>
-    <link rel="stylesheet" href="/layui/css/layui.css" type="text/css">
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="/layui/css/index_log.css"/>
 </head>
 <body>
-
-登录实现
-
-
-<script src="/layui/layui.js"></script>
-<script>
-    //JS
-    layui.use(['element', 'layer', 'util'], function(){
-        var element = layui.element
-            ,layer = layui.layer
-            ,util = layui.util
-            ,$ = layui.$;
-
-    });
-</script>
+<div class="login">
+    <h2>用户登录</h2>
+    <div class="login_box">
+        <!-- required就是不能为空 必须在css效果中有很大的作用 -->
+        <input type="text" name="name" id="name" required />
+        <label for="name" >用户名</label>
+    </div>
+    <div class="login_box">
+        <input type="password" name="pwd" id="pwd" required="required">
+        <label for="pwd">密码</label>
+    </div>
+    <a href="javascript:void(0)">登录
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+</div>
 </body>
 </html>

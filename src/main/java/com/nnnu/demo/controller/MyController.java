@@ -22,5 +22,7 @@ public class MyController {
     public String toIndex(){
         return "index";
     }
+    @GetMapping("Login")
+    public String Login(){return "login";}
 
 }

@@ -24,7 +24,6 @@ public class UserController {
         result.setBean(list);
         return result;
     }
-
     /*@PostMapping("/update")*/
     /*public boolean updateAdmin(Admin admin){
         return adminService.updateAdmin(admin);

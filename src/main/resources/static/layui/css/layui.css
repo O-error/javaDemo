@@ -983,18 +983,17 @@ a cite {
     margin: 0 15px
 }
 
-.layui-layout-admin .layui-footer {
-    position: fixed;
-    left: 200px;
-    right: 0;
-    bottom: 0;
-    z-index: 990;
-    height: 44px;
-    line-height: 44px;
-    padding: 0 15px;
-    box-shadow: -1px 0 4px rgb(0 0 0 / 12%);
-    background-color: #FAFAFA
-}
+/*.layui-layout-admin .layui-footer {*/
+/*    position: fixed;*/
+/*    left: 200px;*/
+/*    bottom: 0;*/
+/*    z-index: 990;*/
+/*    height: 44px;*/
+/*    line-height: 44px;*/
+/*    padding: 0 15px;*/
+/*    box-shadow: -1px 0 4px rgb(0 0 0 / 12%);*/
+/*    background-color: #FAFAFA;*/
+/*}*/
 
 .layui-layout-admin .layui-logo {
     position: absolute;
@@ -1004,13 +1003,36 @@ a cite {
     height: 100%;
     line-height: 60px;
     text-align: center;
-    color: red;
+    font-size: 16px;
+    background-color: #00F7DE;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%)
+}
+
+.layui-layout-admin .layui-logo img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
     font-size: 16px;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%)
 }
 
 .layui-layout-admin .layui-header .layui-nav {
-    background: 0 0
+    background: 0 0;
+
+}
+.layui-layout-admin .layui-header .layui-nava {
+    font-size:32px;
+    padding-top: 13px;
+    font-weight:bold;
+    letter-spacing: 3px;
+    color: #ffffff;
+    font-family:"楷体";
+    background: 0 0;
+
 }
 
 .layui-layout-left {
@@ -1018,7 +1040,9 @@ a cite {
     left: 200px;
     top: 0
 }
-
+.layui-layout-middle{
+text-align: center;
+}
 .layui-layout-right {
     position: absolute !important;
     right: 0;
