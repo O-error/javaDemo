@@ -5,9 +5,11 @@ import com.nnnu.demo.bean.User;
 import com.nnnu.demo.mapper.UserMapper;
 import com.nnnu.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -33,41 +35,25 @@ public class UserServiceImpl implements UserService {
     public boolean addUser(User user) {
         int i=userMapper.insert(user);
 
-        if(i>0){
-            return true;
-        }else {
-            return false;
-        }
+        return i > 0;
 
     }
 
     @Override
     public boolean updateUser(User user) {
         int i=userMapper.updateById(user);
-        if(i>0){
-            return true;
-        }else {
-            return false;
-        }
+        return i > 0;
     }
 
     @Override
     public boolean delUser(User user) {
         int i=userMapper.delete(new QueryWrapper<User>(user));
-        if(i>0){
-            return true;
-        }else {
-            return false;
-        }
+        return i > 0;
     }
 
     @Override
     public boolean delUserById(int id) {
         int i=userMapper.deleteById(id);
-        if(i>0){
-            return true;
-        }else {
-            return false;
-        }
+        return i > 0;
     }
 }
