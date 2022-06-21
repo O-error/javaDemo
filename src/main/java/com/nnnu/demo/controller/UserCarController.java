@@ -2,39 +2,36 @@ package com.nnnu.demo.controller;
 
 import com.nnnu.demo.bean.Result;
 import com.nnnu.demo.bean.ResultCode;
-import com.nnnu.demo.bean.User;
-import com.nnnu.demo.service.UserService;
+import com.nnnu.demo.bean.UserCar;
+import com.nnnu.demo.service.UserCarService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-//人口信息接口
+//人车接口
 @RestController
-public class UserController {
+public class UserCarController {
 
     @Autowired
-    UserService userService;
+    UserCarService userCarService;
 
     //分页查询列表
-    @GetMapping("user/list")
-    public Result getList(User user){
-        return new Result(ResultCode.SUCCESS_CODE,userService.getUser(user));
+    @GetMapping("userCar/list")
+    public Result getList(UserCar userCar){
+        return new Result(ResultCode.SUCCESS_CODE,userCarService.getUserCar(userCar));
     }
 
     //单个id查询
-    @GetMapping("user/getById")
+    @GetMapping("userCar/getById")
     public Result getCar(int id){
-        return new Result(ResultCode.SUCCESS_CODE,userService.getUserById(id));
+        return new Result(ResultCode.SUCCESS_CODE,userCarService.getUserCarById(id));
     }
 
     //添加
-    @PostMapping("user/add")
-    public Result addCar(User user){
-        boolean b=userService.addUser(user);
+    @PostMapping("userCar/add")
+    public Result addCar(UserCar userCar){
+        boolean b=userCarService.addUserCar(userCar);
         if(b){
             return new Result(ResultCode.UNSUCCESS_CODE,null);
         }
@@ -42,9 +39,9 @@ public class UserController {
     }
 
     //修改
-    @PostMapping("user/update")
-    public Result updateCar(User user){
-        boolean b=userService.updateUser(user);
+    @PostMapping("userCar/update")
+    public Result updateCar(UserCar userCar){
+        boolean b=userCarService.updateUserCar(userCar);
         if(b){
             return new Result(ResultCode.UNSUCCESS_CODE,null);
         }
@@ -52,9 +49,9 @@ public class UserController {
     }
 
     //删除根据id
-    @GetMapping("user/deleteByid")
+    @GetMapping("userCar/deleteByid")
     public Result deleteCarById(int id){
-        boolean b=userService.delUserById(id);
+        boolean b=userCarService.delUserCarById(id);
         if(b){
             return new Result(ResultCode.UNSUCCESS_CODE,null);
         }
@@ -62,9 +59,9 @@ public class UserController {
     }
 
     //删除根据实体
-    @PostMapping("user/deleteByBean")
-    public Result deleteCarById(User user){
-        boolean b=userService.delUser(user);
+    @PostMapping("userCar/deleteByBean")
+    public Result deleteCarById(UserCar userCar){
+        boolean b=userCarService.delUserCar(userCar);
         if(b){
             return new Result(ResultCode.UNSUCCESS_CODE,null);
         }

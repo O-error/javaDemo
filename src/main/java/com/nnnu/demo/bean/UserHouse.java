@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @TableName("user_house")
-public class UserHouse {
+public class UserHouse extends BaseBean{
     @TableId
     private Integer id;
     @TableField

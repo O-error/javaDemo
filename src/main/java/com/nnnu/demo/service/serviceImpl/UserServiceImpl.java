@@ -1,6 +1,8 @@
 package com.nnnu.demo.service.serviceImpl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.nnnu.demo.bean.Car;
 import com.nnnu.demo.bean.User;
 import com.nnnu.demo.mapper.UserMapper;
 import com.nnnu.demo.service.UserService;
@@ -16,19 +18,16 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public User getUser(User user) {
-
-        return userMapper.selectOne(new QueryWrapper<User>(user));
-    }
-
-    @Override
     public User getUserById(int id) {
         return userMapper.selectById(id);
     }
 
     @Override
-    public List<User> getUser() {
-        return userMapper.selectList(null);
+    public List<User> getUser(User user) {
+        QueryWrapper<User> queryWrapper=new QueryWrapper<>(user);
+        Page<User> page=new Page<>(user.pageIndex,user.pageSize);
+        Page<User> rs = userMapper.selectPage(page, queryWrapper);
+        return rs.getRecords();
     }
 
     @Override

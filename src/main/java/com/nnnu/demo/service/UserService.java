@@ -6,18 +6,17 @@ import java.util.List;
 
 public interface UserService {
 
-    public User getUser(User user);
 
-    public User getUserById(int id);
+    User getUserById(int id);
 
-    public List<User> getUser();
+    List<User> getUser(User user);
 
-    public boolean addUser(User user);
+    boolean addUser(User user);
 
-    public boolean updateUser(User user);
+    boolean updateUser(User user);
 
-    public boolean delUser(User user);
+    boolean delUser(User user);
 
-    public boolean delUserById(int id);
+    boolean delUserById(int id);
 
 }

@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @TableName("user_car")
-public class UserCar {
+public class UserCar extends BaseBean{
     @TableId
     private Integer id;
     @TableField

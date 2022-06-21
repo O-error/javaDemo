@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @TableName("car")
-public class Car {
+public class Car extends BaseBean{
     @TableId
     private Integer id;
     @TableField

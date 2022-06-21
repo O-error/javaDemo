@@ -6,15 +6,25 @@ import lombok.Data;
 public class Result {
     private Integer code;
     private String msg;
+    private boolean flage;
     private Object bean;
     private ResultCode result;
 
     public Result() {
     }
 
-    public Result(ResultCode resultCode,Object bean) {
+    public boolean isFlage() {
+        return flage;
+    }
+
+    public void setFlage(boolean flage) {
+        this.flage = flage;
+    }
+
+    public Result(ResultCode resultCode, Object bean) {
         this.code = resultCode.getCode();
         this.msg = resultCode.getMsg();
+        this.flage =resultCode.getFlage();
         this.bean = bean;
     }
 

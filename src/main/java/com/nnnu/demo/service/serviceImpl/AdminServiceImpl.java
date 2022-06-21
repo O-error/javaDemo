@@ -17,11 +17,9 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public boolean toLogin(Admin admin) {
-        List<Admin> admins = adminMapper.selectList(new QueryWrapper<Admin>(admin));
-        if(admins.size()>0){
-            return true;
-        }
-        return false;
+        Admin a=adminMapper.selectOne(new QueryWrapper<Admin>(admin).eq("name",admin.getName())
+                .eq("password",admin.getPassword()));
+        return null != a;
     }
 
     @Override
@@ -37,30 +35,18 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public boolean addAdmin(Admin admin) {
         int i=adminMapper.insert(admin);
-        if(i>0){
-            return true;
-        }else {
-            return false;
-        }
+        return i>0;
     }
 
     @Override
     public boolean updateAdmin(Admin admin) {
         int i=adminMapper.updateById(admin);
-        if(i>0){
-            return true;
-        }else {
-            return false;
-        }
+        return i>0;
     }
 
     @Override
     public boolean delAdmin(Admin admin) {
         int i = adminMapper.deleteById(admin);
-        if(i>0){
-            return true;
-        }else {
-            return false;
-        }
+        return i>0;
     }
 }
